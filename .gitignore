@@ -1,0 +1,10 @@
+# Compile artifacts
+/bin/
+*.class
+
+# Packaged binaries
+/*.jar
+
+# Debug/logs
+/debug/
+response.txt
