@@ -27,8 +27,10 @@ jobs:
           ./build.sh
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: cors_proxy.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create ${{ github.ref_name }} cors_proxy.jar \
+            --title "Release ${{ github.ref_name }}" \
+            --notes "Automated release of cors_proxy.jar for version ${{ github.ref_name }}."
+
